@@ -110,7 +110,7 @@ def getReminders(phenny, channel, key, tellee):
    for (teller, verb, datetime, msg) in phenny.reminders[key]: 
       if datetime.startswith(today): 
          datetime = datetime[len(today)+1:]
-      lines.append(template % (tellee, datetime, teller, verb, tellee, msg))
+      lines.append(msg)
 
    try: del phenny.reminders[key]
    except KeyError: phenny.msg(channel, 'Er...')
